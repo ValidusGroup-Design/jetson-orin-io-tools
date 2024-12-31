@@ -1,0 +1,33 @@
+# Python
+*.py[cod]
+__pycache__/
+*.so
+
+# Virtual Environment
+venv/
+.env/
+
+# PyCharm
+.idea/
+*.iml
+*.iws
+*.ipr
+
+# macOS
+.DS_Store
+
+# Logs and Databases
+*.log
+*.sqlite3
+
+# Compiled Python Files
+*.pyc
+*.pyo
+
+# Jetson.GPIO example files
+*.gpio
+
+# Other
+*.swp
+*.bak
+*.tmp
