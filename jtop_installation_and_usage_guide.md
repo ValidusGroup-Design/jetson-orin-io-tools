@@ -13,8 +13,7 @@ Prerequisites
 -------------
 
 -   **JetPack Installed**: Your Jetson Orin Nano should have JetPack
-    installed (preferably JetPack 5.1 for GPIO stability, as per
-    recommendation).
+    installed.
 -   **Python3 Installed**: `jtop` requires Python 3.x.
 -   **Internet Access**: For downloading required packages.
 
