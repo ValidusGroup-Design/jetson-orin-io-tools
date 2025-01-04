@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Installing and Using jtop on NVIDIA Jetson Orin Nano</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            padding: 20px;
+            background-color: #f8f9fa;
+            color: #212529;
+        }
+        h1, h2 {
+            color: #007bff;
+        }
+        code {
+            background-color: #e9ecef;
+            padding: 2px 4px;
+            font-size: 1.1em;
+            border-radius: 4px;
+            font-family: "Courier New", Courier, monospace;
+        }
+        pre {
+            background-color: #f8f9fa;
+            border: 1px solid #ced4da;
+            padding: 10px;
+            border-radius: 4px;
+            overflow-x: auto;
+        }
+        ul {
+            margin-left: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Professional Manual for Installing and Using jtop on NVIDIA Jetson Orin Nano</h1>
+    <h2>Overview</h2>
+    <p><code>jtop</code> is a system monitoring tool tailored for NVIDIA Jetson devices. It provides real-time monitoring of CPU, GPU, memory usage, and other performance metrics. This guide will walk you through installing and using <code>jtop</code> on the NVIDIA Jetson Orin Nano.</p>
+    
+    <h2>Prerequisites</h2>
+    <ul>
+        <li><strong>JetPack Installed</strong>: Your Jetson Orin Nano should have JetPack installed (preferably JetPack 5.1 for GPIO stability, as per recommendation).</li>
+        <li><strong>Python3 Installed</strong>: <code>jtop</code> requires Python 3.x.</li>
+        <li><strong>Internet Access</strong>: For downloading required packages.</li>
+    </ul>
+    
+    <h2>Step 1: Install the Required Dependencies</h2>
+    <p>Open a terminal on your Jetson Orin Nano and run the following commands to update the system and install necessary dependencies:</p>
+    <pre>
+sudo apt update && sudo apt upgrade -y
+sudo apt install python3-pip -y
+    </pre>
+    
+    <h2>Step 2: Install <code>jetson-stats</code></h2>
+    <p>The <code>jtop</code> utility is part of the <code>jetson-stats</code> package. Install it using <code>pip</code>:</p>
+    <pre>
+pip3 install jetson-stats
+    </pre>
+    <p>Verify the installation:</p>
+    <pre>
+jtop --version
+    </pre>
+    <p>You should see the installed version of <code>jtop</code>.</p>
+    
+    <h2>Step 3: Grant Permissions for User Access</h2>
+    <p>To allow non-root users to run <code>jtop</code>, add your user to the <code>video</code> group:</p>
+    <pre>
+sudo usermod -aG video $USER
+    </pre>
+    <p>Log out and log back in for the changes to take effect.</p>
+    
+    <h2>Step 4: Launching <code>jtop</code></h2>
+    <p>Run <code>jtop</code> from the terminal:</p>
+    <pre>
+jtop
+    </pre>
+    <p>This command opens an interactive interface displaying real-time system monitoring data.</p>
+    
+    <h2>Navigating <code>jtop</code></h2>
+    <ul>
+        <li><strong>CPU and GPU Usage</strong>: View the CPU and GPU utilization on the main dashboard.</li>
+        <li><strong>Temperature Monitoring</strong>: Check real-time temperature readings of your Jetson device.</li>
+        <li><strong>Memory and Disk Usage</strong>: Monitor RAM and storage usage.</li>
+        <li><strong>Processes</strong>: Inspect currently running processes and their resource consumption.</li>
+    </ul>
+    <p>Use the arrow keys to navigate and press <code>Enter</code> for more details about a selected component.</p>
+    
+    <h2>Step 5: Customizing <code>jtop</code></h2>
+    <p><code>jtop</code> allows customization of its dashboard to focus on metrics important to you. Use the following keys:</p>
+    <ul>
+        <li><code>t</code>: Toggle display of temperature.</li>
+        <li><code>r</code>: Refresh data.</li>
+        <li><code>q</code>: Quit <code>jtop</code>.</li>
+    </ul>
+    
+    <h2>Step 6: Updating <code>jetson-stats</code></h2>
+    <p>Regular updates to <code>jetson-stats</code> ensure compatibility with the latest JetPack versions. Update using:</p>
+    <pre>
+pip3 install --upgrade jetson-stats
+    </pre>
+    
+    <h2>Troubleshooting</h2>
+    <h3><code>jtop</code> Command Not Found</h3>
+    <p>Ensure <code>jetson-stats</code> is installed correctly. Reinstall using:</p>
+    <pre>
+pip3 install --force-reinstall jetson-stats
+    </pre>
+    
+    <h3>Permission Issues</h3>
+    <p>Double-check that your user is part of the <code>video</code> group:</p>
+    <pre>
+groups $USER
+    </pre>
+    
+    <h2>Conclusion</h2>
+    <p>With <code>jtop</code>, you can efficiently monitor and optimize the performance of your NVIDIA Jetson Orin Nano. For more details and advanced features, refer to the <a href="https://github.com/rbonghi/jetson_stats" target="_blank">official documentation</a>.</p>
+    
+    
+    <p style="text-align: center; font-size: 0.9em; color: #666;">
+    &copy; 2025 Validus Group Inc. All rights reserved. Unauthorized duplication or distribution of this material is strictly prohibited.
+</p>
+
+</body>
+</html>
