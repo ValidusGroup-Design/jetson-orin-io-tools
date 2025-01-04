@@ -1,4 +1,4 @@
-Professional Manual for Installing and Using jtop on NVIDIA Jetson Orin Nano
+Installing and Using jtop on NVIDIA Jetson Orin Nano
 ============================================================================
 
 Overview
