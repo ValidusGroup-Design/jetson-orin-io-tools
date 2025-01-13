@@ -1,4 +1,4 @@
-# Dual License: MIT and GPL
+# Dual License: MIT and GPLv3
 # Copyright (c) 2025 Fred Fisher, Validus Group Inc.
 # www.validusgroup.com
 #
